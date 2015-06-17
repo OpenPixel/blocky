@@ -1,23 +1,28 @@
-from setuptools import setup
+from setuptools import find_packages, setup
 
-install_requires = ['flask']
+install_requires = ['flask', 'jinja2']
 
 setup(
     name='flask_blocky',
     version='0.0.1',
     description='Block rendering for flask.',
     long_description='',
-    keywords='flask',
+    keywords='flask jinja2',
     author='Cameron A. Stitt',
     author_email='cameron@cam.st',
-    url='https://github.com/cam-stitt/flask-blocky',
+    url='https://github.com/OpenPixel/flask-blocky',
     license='BSD',
-    py_modules=['flask_blocky'],
+    packages=find_packages(exclude=['docs', 'tests*']),
     zip_safe=False,
+    platforms='any',
     install_requires=install_requires,
-    include_package_data=True,
     classifiers=[
-        "Programming Language :: Python",
+        "Development Status :: 3 - Alpha",
+
+        "Intended Audience :: Developers",
+
         "Topic :: Software Development :: Libraries :: Python Modules",
+
+        "Programming Language :: Python",
     ]
 )
