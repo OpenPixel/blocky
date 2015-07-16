@@ -1,5 +1,5 @@
 API
 ===
 
-.. automodule:: flask_blocky
+.. automodule:: blocky
     :members:

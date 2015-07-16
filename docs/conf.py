@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# flask_blocky documentation build configuration file, created by
+# blocky documentation build configuration file, created by
 # sphinx-quickstart on Tue Jun 16 13:08:08 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -51,7 +51,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'flask_blocky'
+project = u'blocky'
 copyright = u'2015, Cameron Stitt'
 author = u'Cameron Stitt'
 
@@ -212,7 +212,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'flask_blockydoc'
+htmlhelp_basename = 'blockydoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -234,7 +234,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'flask_blocky.tex', u'flask\\_blocky Documentation',
+  (master_doc, 'blocky.tex', u'blocky Documentation',
    u'Cameron Stitt', 'manual'),
 ]
 
@@ -264,7 +264,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'flask_blocky', u'flask_blocky Documentation',
+    (master_doc, 'blocky', u'blocky Documentation',
      [author], 1)
 ]
 
@@ -278,8 +278,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'flask_blocky', u'flask_blocky Documentation',
-   author, 'flask_blocky', 'One line description of project.',
+  (master_doc, 'blocky', u'blocky Documentation',
+   author, 'blocky', 'One line description of project.',
    'Miscellaneous'),
 ]
 

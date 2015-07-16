@@ -1,9 +1,9 @@
-.. flask_blocky documentation master file, created by
+.. blocky documentation master file, created by
    sphinx-quickstart on Tue Jun 16 13:08:08 2015.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to flask_blocky's documentation!
+Welcome to blocky's documentation!
 ========================================
 
 Contents:

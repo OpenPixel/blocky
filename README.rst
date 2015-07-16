@@ -1,4 +1,4 @@
-flask_blocky
+blocky
 ------------
 
 Render blocks within a template.

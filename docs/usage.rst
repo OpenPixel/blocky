@@ -1,14 +1,14 @@
 Usage
 =====
 
-There are two ways to use flask_blocky. Either call our rendering method directly, or to make use of a Class based view for added customization.
+There are two ways to use blocky. Either call our rendering method directly, or to make use of a Class based view for added customization.
 
 Direct Method
 -------------
 
 Here is an example using our direct method ::
 
-    from flask_blocky import render_template
+    from blocky import render_template
 
     @app.route('/')
     def home():
@@ -25,7 +25,7 @@ Class View
 
 Here is an example using our class view ::
 
-    from flask_blocky import BaseRenderView
+    from blocky import BaseRenderView
 
     class AppBaseView(BaseRenderView):
         default_blocks = {
