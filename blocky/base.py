@@ -39,16 +39,16 @@ class BlockRenderer(object):
         """
         return self.request.path
 
-    def get_block_iter(self):
+    def get_block_iter(self, blocks):
         """Returns an iterable version of a dict.
 
         Note:
             Python 3 does not have iteritems() and instead uses items().
         """
         try:
-            return self.blocks.iteritems()
+            return blocks.iteritems()
         except AttributeError:
-            return self.blocks.items()
+            return blocks.items()
 
     def build_json(self, block_funcs):
         """Build the json for the blocks.
@@ -63,7 +63,7 @@ class BlockRenderer(object):
 
         items = list()
 
-        for name, selector in self.get_block_iter():
+        for name, selector in self.get_block_iter(self.blocks):
             try:
                 response.append({
                     'name': name,
@@ -125,8 +125,8 @@ class BlockRenderer(object):
         else:
             new_context = self.new_context(self.template)
 
-        for name, func in self.get_template_blocks(
-            self.template).iteritems():
+        for name, func in self.get_block_iter(self.get_template_blocks(
+            self.template)):
             blocks[name] = func
 
         return self.build_response(blocks)
