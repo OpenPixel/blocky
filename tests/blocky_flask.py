@@ -35,7 +35,8 @@ class FlaskBlockyTestCase(unittest.TestCase):
             response = c.get('/', headers=self.headers)
             assert response.status_code == 200
 
-            json_response = json.loads(response.data)
+            json_response = json.loads(response.data.decode())
+
             assert 'blocks' in json_response
             assert filter(
                 lambda x: x['name'] == 'content', json_response['blocks']
@@ -48,7 +49,7 @@ class FlaskBlockyTestCase(unittest.TestCase):
 
             expected = render_flask_template('response.html')
 
-            assert expected == response.data
+            assert expected == response.data.decode()
 
 if __name__ == '__main__':
     unittest.main()

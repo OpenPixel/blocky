@@ -1,5 +1,4 @@
 import json
-
 from django.shortcuts import render
 from django.test import TestCase, RequestFactory
 
@@ -16,7 +15,8 @@ class DjangoBlockyTestCase(TestCase):
         response = home(request)
         assert response.status_code == 200
 
-        json_response = json.loads(response.content)
+        json_response = json.loads(response.content.decode())
+
         assert 'blocks' in json_response
         assert filter(
             lambda x: x['name'] == 'content', json_response['blocks']
