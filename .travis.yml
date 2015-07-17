@@ -9,6 +9,6 @@ env:
     - FLASK_VERSION=0.10.1
     - JINJA2_VERSION=2.7.3
 install:
-    - pip install -q jinja2=$JINJA2_VERSION flask=$FLASK_VERSION django=$DJANGO_VERSION
+    - pip install -q jinja2==$JINJA2_VERSION flask==$FLASK_VERSION django==$DJANGO_VERSION
     - python setup.py -q install
 script: make test
