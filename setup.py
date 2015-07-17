@@ -15,6 +15,7 @@ setup(
     packages=find_packages(
         exclude=["*.tests", "*.tests.*", "tests.*", "tests", "docs"]
     ),
+    test_suite='tests.runtests.runtests',
     zip_safe=False,
     platforms='any',
     install_requires=install_requires,
