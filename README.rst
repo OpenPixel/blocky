@@ -1,9 +1,13 @@
 blocky
 ======
 
-.. image:: https://travis-ci.org/OpenPixel/blocky.svg
 
-.. image:: https://coveralls.io/repos/OpenPixel/blocky/badge.svg?branch=master&service=github :target: https://coveralls.io/github/OpenPixel/blocky?branch=master
+.. image:: https://travis-ci.org/OpenPixel/blocky.svg?branch=master
+    :target: https://travis-ci.org/OpenPixel/blocky
+
+
+.. image:: https://coveralls.io/repos/OpenPixel/blocky/badge.svg?branch=master&service=github
+  :target: https://coveralls.io/github/OpenPixel/blocky?branch=master
 
 
 Render blocks within a template.
