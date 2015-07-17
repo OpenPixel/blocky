@@ -50,27 +50,19 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'blocky_django.urls'
+ROOT_URLCONF = 'tests.blocky_django.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-
-        },
-    },
-    {
         'BACKEND': 'django.template.backends.jinja2.Jinja2',
-        'DIRS': ['jinja2'],
+        'DIRS': ['tests/templates'],
         'OPTIONS': {
-            'environment': 'blocky_django.jinja2.environment'
+            'environment': 'tests.blocky_django.jinja2.environment'
         }
     }
 ]
 
-WSGI_APPLICATION = 'blocky_django.wsgi.application'
+WSGI_APPLICATION = 'tests.blocky_django.wsgi.application'
 
 
 # Database

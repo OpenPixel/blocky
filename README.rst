@@ -3,6 +3,9 @@ blocky
 
 .. image:: https://travis-ci.org/OpenPixel/blocky.svg
 
+.. image:: https://coveralls.io/repos/OpenPixel/blocky/badge.svg?branch=master&service=github :target: https://coveralls.io/github/OpenPixel/blocky?branch=master
+
+
 Render blocks within a template.
 
 Docs: `flask-blocky docs <http://flask-blocky.readthedocs.org/en/latest/>`_
