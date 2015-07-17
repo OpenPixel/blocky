@@ -7,8 +7,22 @@ from django.template import engines
 from ..base import BlockRenderer
 
 
+__all__ = ['DjangoBlockRenderer']
+
+
 class DjangoBlockRenderer(BlockRenderer):
     def __init__(self, request, template_name, blocks, context=None):
+        """Prepare the renderer.
+
+        Args:
+            request (django.http.HttpRequest): The request object.
+
+            template_name (str): The name of the template to render.
+
+            blocks (dict): The dict of blocks to render.
+
+            context (dict): The context to pass into the renderer.
+        """
         self.template_name = template_name
         self.blocks = blocks
         self.context = context

@@ -7,11 +7,23 @@ from jinja2 import nodes
 from ..base import BlockRenderer
 
 
+__all__ = ['FlaskBlockRenderer']
+
+
 class FlaskBlockRenderer(BlockRenderer):
-    def __init__(self, template_name, blocks, **context):
+    def __init__(self, template_name, blocks, **kwargs):
+        """Prepare the renderer.
+
+        Args:
+            template_name (str): The name of the template to render.
+
+            blocks (dict): The dict of blocks to render.
+
+            **kwargs: The context to pass into the renderer.
+        """
         self.template_name = template_name
         self.blocks = blocks
-        self.context = context
+        self.context = kwargs
 
         self.app = _app_ctx_stack.top.app
         self.jinja_env = self.app.jinja_env

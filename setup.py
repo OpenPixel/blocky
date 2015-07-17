@@ -5,9 +5,9 @@ install_requires = ['jinja2', 'flask', 'django']
 setup(
     name='blocky',
     version='0.0.1',
-    description='Block rendering for flask.',
+    description='Block rendering for flask and django using jinja2.',
     long_description='',
-    keywords='flask jinja2',
+    keywords='flask jinja2 django',
     author='Cameron A. Stitt',
     author_email='cameron@cam.st',
     url='https://github.com/OpenPixel/blocky',
