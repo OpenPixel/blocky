@@ -1,33 +1,36 @@
 Usage
 =====
 
-There are two ways to use flask_blocky. Either call our rendering method directly, or to make use of a Class based view for added customization.
+Blocky can be used in both Flask and Django. For both frameworks, you can use a method call or a class view.
 
-Direct Method
--------------
-
-Here is an example using our direct method ::
-
-    from flask_blocky import render_template
-
-    @app.route('/')
-    def home():
-        return render_template('home.html', {'content': '.content'})
-
-We pass in the template name and a dictionary of blocks to render. The dictionary is in the following format ::
+When passing in the blocks to render, we always use a dictionary with the following format: ::
 
     {
         block_name: css_selector
     }
 
+Flask
+-----
+
+Direct Method
+^^^^^^^^^^^^^
+
+::
+
+    from blocky.flask.shortcuts import render_template
+
+    @app.route('/')
+    def home():
+        return render_template('home.html', {'content': '.content'}, form=form)
+
 Class View
-----------
+^^^^^^^^^^
 
-Here is an example using our class view ::
+::
 
-    from flask_blocky import BaseRenderView
+    from blocky.flask.shortcuts import BlockRenderView
 
-    class AppBaseView(BaseRenderView):
+    class AppBaseView(BlockRenderView):
         default_blocks = {
             'title': 'title',
             'messages': '.messages',
@@ -40,8 +43,38 @@ Here is an example using our class view ::
         }
 
         def get(self):
-            return self.render_template({'name': 'Jim'})
+            return self.render_template(form=form)
 
     app.add_url_rule('/', view_func=HomeView.as_view('home'))
 
-Although there is slightly more setup initially, it allows for more configuration. The above example shows a way in which you can use default_blocks. This is already part of our base class view and allows for inheritance of class views. In the above example, home will respond with three blocks ('title', 'messages' and 'content').
+Although there is slightly more setup initially, it allows for more configuration and less repition when defining common blocks. The above example shows a way in which you can use default_blocks. This is already part of our base class view and allows for inheritance of class views. In the above example, home will respond with three blocks ('title', 'messages' and 'content').
+
+Django
+------
+
+Direct Method
+^^^^^^^^^^^^^
+
+::
+
+    from blocky.django.shortcuts import render_template
+
+    def home(request):
+        return render_template(request, 'child.html', {'content': '.content'}, {'form': form})
+
+Class View
+^^^^^^^^^^
+
+::
+
+    from blocky.django.shortcuts import BlockRenderView
+
+    class HomeView(BlockRenderView):
+        template_name = 'home.html'
+        default_blocks = {
+            'title': 'title',
+            'messages': '.messages',
+        }
+        blocks = {
+            'content': '.content'
+        }
