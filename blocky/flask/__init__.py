@@ -26,6 +26,9 @@ class FlaskBlockRenderer(BlockRenderer):
         self.context = kwargs
 
         self.app = _app_ctx_stack.top.app
+
+        self.app.update_template_context(self.context)
+
         self.jinja_env = self.app.jinja_env
 
         self.template = self.get_template(self.template_name)

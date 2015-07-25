@@ -4,7 +4,7 @@ install_requires = ['jinja2', 'flask', 'django']
 
 setup(
     name='blocky',
-    version='0.0.1',
+    version='0.0.2',
     description='Block rendering for flask and django using jinja2.',
     long_description='',
     keywords='flask jinja2 django',
